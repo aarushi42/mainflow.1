@@ -1,179 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Home Page</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-.header {
-background: #4F7942;
-height: 70px;
-text-align: center;color: white;font-size: 20px;
-line-height: 70px;
-}
-.button1 {
-cursor: pointer;
-border: none;
-padding: 10px 20px;
-color: white;
-background: lightblue;
-}
-
-.button2 {
-cursor: pointer;
-border: none;
-padding: 10px 20px;
-color: white;
-background: orange;
-}
-
-nav {
-background: #7CFC00;
-padding: 0 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 70px;
-}
-nav img {
-height: 70px;
-}
-nav ol {
-list-style: none;
-display: flex;
-}
-nav ol li {
-margin-right: 20px;
-}
-nav ol li a {
-font-size: 20px;
-color: white;
-text-decoration: none;
-}
-nav ol li a:hover, nav ol li a.active {
-color: blue;
-}
-body {
-background-image: url("logoo.jpg");
-height: 100vh;
-width: 100vw;
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-position: relative;
-}
-.main-content {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 50px;
-}
-.homepagecontent {            
-color: white;
-padding: 20px;
-width: 50%;
-text-align: left;
-}
-h1 {
-font-size: 60px;
-}
-h2 {
-font-size: 32px;
-}
-.slideshow {
-width: 45%;
-text-align: center;
-color: white;
-}
-.slideshow img {
-width: 400px;
-height: 250px;
-border-radius: 10px;
-object-fit: cover;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.slideshow button {
-padding: 10px 20px;
-margin: 20px 10px;
-cursor: pointer;
-font-size: 16px;
-background-color: #4F7942;
-color: white;
-border: none;
-border-radius: 5px;
-}
-.form-link {
-margin-top: 50px;
-text-align: center;
-}
-.form-link a {
-font-size: 20px;
-text-decoration: none;
-color: white;
-font-weight: bold;
-}
-.form-link a:hover {
-color: blue;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login and Signup</title>
 </head>
 <body>
-    <div class="header">
-        0123456789 &nbsp;&nbsp; 01233478899 &nbsp;&nbsp; organicfarma@gmail.com &nbsp;&nbsp;
-        <button type="button" class="button1">Join Us</button>
-        <button type="button" class="button2">Contact Us</button>
-    </div>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
 
-    <nav>
-        <img src="logo-color.png" alt="Logo">
-        <ol>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Our Journey</a></li>
-        </ol>
-    </nav>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-    <div class="main-content">
-        <!-- Left-side Homepage Content -->
-        <div class="homepagecontent">
-            <h1>Organic Farming</h1>
-            <h2>Brings you the freshest produce in the land</h2>
-        </div>
+      <button type="submit">Login</button>
+    </form>
+    
+    <h2>Signup</h2>
+    <form action="signup.php" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
 
-        <!-- Right-side Slideshow -->
-        <div class="slideshow">
-            <h2>Our Fresh Produce</h2>
-            <img id="slideshow-image" src="image1.jpg" alt="Slideshow">
-            <br>
-            <button onclick="prevImage()">Previous</button>
-            <button onclick="nextImage()">Next</button>
-        </div>
-    </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <!-- Form link at the bottom -->
-    <div class="form-link">
-        <a href="contact_form.html">Go to Contact Form</a>
-    </div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-    <script>
-        var images = ["image1.jpg", "image2.jpg", "image3.jpg"];
-        var currentImageIndex = 0;
-
-        function showImage(index) {
-            document.getElementById("slideshow-image").src = images[index];
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            showImage(currentImageIndex);
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            showImage(currentImageIndex);
-        }
-    </script>
+      <button type="submit">Signup</button>
+    </form>
+  </div>
 </body>
 </html>
